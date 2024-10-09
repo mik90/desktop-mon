@@ -7,7 +7,7 @@ Monitors cpu/gpu temps on Windows and periodically writes data to an Adafruit OL
 ## sysinfo-publisher
 
 > [!NOTE]
-> This only works on Windows
+> This only works on Windows and also assumes an Nvidia GPU. The CPU temp properties are also hardcoded
 
 C# application that publishes system data over serial to the display. [LibreHardwareMonitorLib](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) is used for getting info on periphials and is managed thru NuGet.
 
@@ -31,7 +31,7 @@ This assumes that there is a display listening on the COM3 serial port
 
 ```bat
 cd sysinfo-publisher
-dotnet run COM3 -c Release
+dotnet run -c Release -- COM3
 ```
 
 ## display
